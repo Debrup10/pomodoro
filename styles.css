@@ -1,0 +1,145 @@
+/* 1. Global Styles and Background */
+body {
+    /* Set a neutral background color and nice font */
+    background-color: #f7f7f7;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    
+    /* Center the content vertically and horizontally */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Ensures it takes up the full screen height */
+    margin: 0;
+}
+
+/* 2. Timer Container */
+.timer-container {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    min-width: 350px;
+}
+
+/* 3. Session Label (Work/Break) */
+#session-label {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #e57373; /* A warm color for focus */
+}
+
+/* 4. Time Display */
+#time-display {
+    font-size: 6em; /* Very large and prominent */
+    font-weight: 700;
+    margin-bottom: 30px;
+    color: #4a4a4a;
+    /* Optional: Monospace font for consistent number alignment */
+    font-family: 'Courier New', monospace; 
+}
+
+/* 5. Control Buttons */
+.controls button {
+    background-color: #146ab0; /* A light blue for primary actions */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 10px;
+    border-radius: 8px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
+}
+
+.controls button:hover {
+    background-color: #114d7d; /* Darker blue on hover */
+}
+
+.controls button:active {
+    /* Slight press effect */
+    transform: scale(0.98); 
+}
+
+/* Specific button color for Reset */
+#reset-btn {
+    background-color: #bdbdbd; /* Gray for less critical action */
+}
+
+#reset-btn:hover {
+    background-color: #a1a1a1;
+}
+
+/* --- 6. Settings Section --- */
+
+.settings {
+    margin-top: 30px;           /* Space between buttons and settings */
+    padding-top: 20px;
+    border-top: 1px solid #eee; /* A subtle line to separate the sections */
+    text-align: left;           /* Align text to the left for easier reading */
+}
+
+.settings h3 {
+    font-size: 1rem;
+    color: #888;
+    margin-bottom: 15px;
+    text-transform: uppercase;  /* Makes the title look professional */
+    letter-spacing: 1px;
+}
+
+/* --- 7. Input Groups (Label + Input) --- */
+
+.input-group {
+    display: flex;
+    justify-content: space-between; /* Pushes label to left and input to right */
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.input-group label {
+    font-size: 0.9rem;
+    color: #555;
+    font-weight: bold;
+}
+
+.input-group input {
+    width: 60px;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 1rem;
+    outline: none;
+}
+
+/* Change input border color when clicking into it */
+.input-group input:focus {
+    border-color: #64b5f6;
+}
+
+/* --- 8. The Apply Settings Button --- */
+
+#apply-settings {
+    width: 100%;               /* Make it span the whole width of the container */
+    margin-top: 15px;
+    background-color: #4caf50; /* A green color to signify "Save/Success" */
+    color: white;
+    font-weight: bold;
+    padding: 12px;
+}
+
+#apply-settings:hover {
+    background-color: #45a049; /* Slightly darker green on hover */
+}
+@keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.7; }
+    100% { opacity: 1; }
+}
+
+.running #time-display {
+    animation: pulse 2s infinite ease-in-out;
+    color: #2c3e50; /* Or any color you like for active mode */
+}

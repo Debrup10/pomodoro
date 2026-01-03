@@ -142,8 +142,20 @@ function countdown() {
 
 // --- 4. Control Functions ---
 
+let wakeLock = null;
+
+async function requestWakeLock() {
+    try {
+        wakeLock = await navigator.wakeLock.request('screen');
+        console.log('Wake Lock is active!');
+    } catch (err) {
+        console.log(`${err.name}, ${err.message}`);
+    }
+}
+
 function startTimer() {
     if (!isRunning) {
+        requestWakeLock();
         isRunning = true;
         document.querySelector('.timer-container').classList.add('running');
         intervalId = setInterval(countdown, 1000);
